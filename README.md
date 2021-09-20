@@ -1,0 +1,2 @@
+# omenbot
+Discord bot
