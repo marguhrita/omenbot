@@ -99,21 +99,17 @@ client.loop.create_task(startup())
 @client.command(name = "resetreminder")
 @commands.has_role(["botdev", "Admin"])
 async def resetreminder(ctx):
-    if ctx.author.id == 806556994944106587:# or client.get_role(889460025452531780) in ctx.author.roles:
-        await db.set("last_reminder", datetime.min.isoformat())
-        await ctx.send("Reminder reset")
-    else:
-        await ctx.send("No.")
+    await db.set("last_reminder", datetime.min.isoformat())
+    await ctx.send("Reminder reset")
+
 
 @client.command(name = "reminder")
 @commands.has_role(["botdev", "Admin"])
 async def manual_reminder(ctx, work, time_due, day_due="today" ):
-    if ctx.author.id == 806556994944106587:# or client.get_role(889460025452531780) in ctx.author.roles:
-        reminderChannel = client.get_channel(898163614312181761)
-        await reminderChannel.send("<@&898942341405106258> Don't forget the {0} due {1} at {2}!".format(work, day_due, time_due))
-        await ctx.send("Reminder sent")
-    else:
-        await ctx.send("No.")
+    reminderChannel = client.get_channel(898163614312181761)
+    await reminderChannel.send("<@&898942341405106258> Don't forget the {0} due {1} at {2}!".format(work, day_due, time_due))
+    await ctx.send("Reminder sent")
+
  
 
 #<----------------------------------------------------->
