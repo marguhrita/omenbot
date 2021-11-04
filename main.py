@@ -96,7 +96,7 @@ async def startup():
 client.loop.create_task(startup())
 
 @client.command(name = "resetreminder")
-@commands.has_role(["botdev", "Admin])
+@commands.has_role(["botdev", "Admin"])
 async def resetreminder(ctx):
     if ctx.author.id == 806556994944106587:# or client.get_role(889460025452531780) in ctx.author.roles:
         await db.set("last_reminder", datetime.min.isoformat())
