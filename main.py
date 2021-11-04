@@ -97,14 +97,14 @@ async def startup():
 client.loop.create_task(startup())
 
 @client.command(name = "resetreminder")
-@commands.has_role(["botdev", "Admin"])
+@commands.has_any_role("botdev", "Admin")
 async def resetreminder(ctx):
     await db.set("last_reminder", datetime.min.isoformat())
     await ctx.send("Reminder reset")
 
 
 @client.command(name = "reminder")
-@commands.has_role(["botdev", "Admin"])
+@commands.has_any_role("botdev", "Admin")
 async def manual_reminder(ctx, work, time_due, day_due="today" ):
     reminderChannel = client.get_channel(898163614312181761)
     await reminderChannel.send("<@&898942341405106258> Don't forget the {0} due {1} at {2}!".format(work, day_due, time_due))
