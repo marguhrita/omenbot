@@ -1,0 +1,7 @@
+aiofiles
+python-dateutil
+cogs
+youtube-search-python
+pytube
+DiscordUtils
+DiscordUtils[voice]
