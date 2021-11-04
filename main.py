@@ -1,3 +1,4 @@
+# Comment out lines 2 and 7 if you are not using replit.
 from keepalive import keep_alive
 import discord, os, requests
 from discord.ext import commands
