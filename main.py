@@ -1,10 +1,10 @@
 # Comment out lines 2 and 7 if you are not using replit.
-from keepalive import keep_alive
+#from keepalive import keep_alive
 import discord, os, requests
 from discord.ext import commands
 import schedule, time, asyncio
 from datetime import datetime
-from replit import database
+#from replit import database
 from dateutil import parser as dateparser
 # SELF HOST:
 
