@@ -71,7 +71,6 @@ if __name__ =='__main__':
     client.load_extension(e)
     
 #<----------------------------------------------------->
-keep_alive()
-
-client.run(os.getenv("TOKEN"))
-
+#keep_alive()
+#client.run(os.getenv("TOKEN"))
+client.run("TOKEN")
